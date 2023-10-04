@@ -1,0 +1,9 @@
+@import '../Component/Signin/Sigin.scss';
+@import '../Pages/Connect/Connect.scss';
+@import '../Component/Header/Header.scss';
+ body, #root, .app{
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    width: 100vw; 
+    margin: 0;
+    padding: 0;
+}
