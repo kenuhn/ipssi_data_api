@@ -1,19 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
+import fetchApi from '../../Api/fetch'
 
+const rechercheApi = async (data) => {
+    const classApi = new fetchApi()
+    const newUser = await classApi.createUser(data)
+    return newUser
+
+}
 const SignUp = () => {
     const [isError, setIsError] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const name = formData.get("name");
         const password = formData.get('password');
-        const confirmPassword = formData.get('confirm-password');
+        const confirmPassword = formData.get('confirm-password'); 
 
         if (confirmPassword !== password) {
             setIsError(true)
+        } else {
+            const myData = {name: name, password : password}
+            const newUser = await rechercheApi(myData)
+           console.log(newUser)
         }
     }
     return (
