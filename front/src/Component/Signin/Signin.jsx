@@ -1,5 +1,5 @@
 import React from 'react';
-import fetchApi from '../../Api/fetch';
+import fetchApi from '../../utils/fetch';
 import {  useNavigate } from 'react-router-dom';
 async function rechercheApi (data) {
     const classApi = new fetchApi()
@@ -37,7 +37,7 @@ const Signin = () => {
                 <label htmlFor="password">Enter your password: </label>
                 <input type="password" name="password" id="password" required />
 
-            <button type='submit'> S'inscrire</button>
+            <button type='submit'> Se connecter</button>
          </form>
    
     );

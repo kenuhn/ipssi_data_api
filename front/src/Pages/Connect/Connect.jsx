@@ -12,11 +12,9 @@ const connect = () => {
         if (e.target.className === 'connect_signin') {
             setIsSignIn(true);
             setIsSignUp(false)
-            console.log(isSignIn)
         } else if (e.target.className === 'connect_signup') {
             setIsSignIn(false);
             setIsSignUp(true)
-            console.log(isSignUp)
         }
     }
     return (

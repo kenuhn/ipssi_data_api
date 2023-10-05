@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import fetchApi from '../../Api/fetch'
+import fetchApi from '../../utils/fetch'
 
 const rechercheApi = async (data) => {
     const classApi = new fetchApi()

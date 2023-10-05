@@ -48,19 +48,19 @@ export default class CALLAPI {
     }
 
 
-    async readUser () {
+    async readUser (id) {
       
-        const url = `http://127.0.0.1:5000/users`
+        const url = `http://127.0.0.1:5000/users/${id}`
         try {
             const options = {
                 method: 'GET', // Méthode HTTP POST
                 headers: {
                   'Content-Type': 'application/json' // Type de contenu JSON
                 },
+            
               };
-            const response = await fetch(`http://127.0.0.1:5000/users`, options)
+            const response = await fetch(`http://127.0.0.1:5000/users/${id}`, options)
             const data = await response.json()
-            console.log(data)
             return data 
 
         } catch (error) {
@@ -70,9 +70,25 @@ export default class CALLAPI {
 
     }
 
-    async updateUser (data) {
-        jsonData = data.json() 
-        url = `http://localhost:5000/user/`
+    async updateUser (data, id) {
+        const jsonData = data
+
+        try {
+            const options = {
+                method: 'PUT', // Méthode HTTP POST
+                headers: {
+                  'Content-Type': 'application/json' // Type de contenu JSON
+                },
+                body: JSON.stringify(jsonData) 
+              };
+            const response = await fetch(`http://127.0.0.1:5000/users/${id}`, options)
+            const data = await response.json()
+            return data 
+
+        } catch (error) {
+            console.log(error)
+            return error
+        }
 
     }
 }

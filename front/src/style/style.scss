@@ -1,10 +1,18 @@
-@import '../Component/Signin/Sigin.scss';
+
 @import '../Pages/Connect/Connect.scss';
 @import '../Component/Header/Header.scss';
 @import '../Pages/Welcome/Welcome.scss';
+@import '../Component//Compte/Compte.scss';
+@import '../Component/Signin/Sigin.scss';
  body, #root, .app{
     height: 100vh; /* 100% de la hauteur de la fenêtre */
     width: 100vw; 
     margin: 0;
     padding: 0;
+}
+
+
+a h1{
+    margin: 0 !important;
+    color: black !important;
 }

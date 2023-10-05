@@ -12,4 +12,12 @@
         margin: 0;
     }
 
+    &_list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+
+    }
+
 }
