@@ -10,6 +10,7 @@ const rechercheApi = async (data) => {
 }
 const SignUp = () => {
     const [isError, setIsError] = useState(false);
+    const [Connexion, setConnexion] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,13 +19,21 @@ const SignUp = () => {
         const name = formData.get("name");
         const password = formData.get('password');
         const confirmPassword = formData.get('confirm-password'); 
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{1,8}$/;
 
-        if (confirmPassword !== password) {
+        if (confirmPassword !== password ) {
             setIsError(true)
-        } else {
+        } 
+        else if (name.length < 12 && password.length < 12) {
+            setIsError(true)
+        }
+        else {
+
             const myData = {name: name, password : password}
             const newUser = await rechercheApi(myData)
-           console.log(newUser)
+            if (newUser.include(newUser.user_id)) {
+                setConnexion(true)
+            }
         }
     }
     return (
@@ -39,7 +48,8 @@ const SignUp = () => {
 
                 <label htmlFor="confirm-password">confirm-password: </label>
                 <input type="password" name="confirm-password" id="confirm-password" required />
-                {isError ? <div className='form_error'>mots de passe différents</div>: ''}
+                {isError ? <div className='form_error'>erreur dans le mot de passe</div>: ''}
+                {Connexion ? <div className='form_error'>vous êtes inscris </div>: ''}
             <button type='submit'> S'inscrire</button>
          </form>
    

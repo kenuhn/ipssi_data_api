@@ -4,6 +4,8 @@ import img1 from '../../img/MicrosoftTeams-image.png'
 import img2 from '../../img/MicrosoftTeams-image(1).png'
 import img3 from '../../img/MicrosoftTeams-image(2).png'
 import img4 from '../../img/MicrosoftTeams-image(3).png'
+import img5 from '../../img/MicrosoftTeams-image(6).png'
+import img6 from '../../img/MicrosoftTeams-image7.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,6 +20,8 @@ const Analyse = () => {
         <SwiperSlide style={{display: "flex", justifyContent: "center"}}> <img style={{ width: '500px', height: '500px' }} src={img2} alt="Image 1" /></SwiperSlide>
         <SwiperSlide style={{display: "flex", justifyContent: "center"}}> <img style={{ width: '500px', height: '500px' }} src={img3} alt="Image 1" /></SwiperSlide>
         <SwiperSlide style={{display: "flex", justifyContent: "center"}}> <img style={{ width: '500px', height: '500px' }} src={img4} alt="Image 1" /></SwiperSlide>
+        <SwiperSlide style={{display: "flex", justifyContent: "center"}}> <img style={{ width: '500px', height: '500px' }} src={img5} alt="Image 1" /></SwiperSlide>
+        <SwiperSlide style={{display: "flex", justifyContent: "center"}}> <img style={{ width: '500px', height: '500px' }} src={img6} alt="Image 1" /></SwiperSlide>
       </Swiper>
     </div>
 
